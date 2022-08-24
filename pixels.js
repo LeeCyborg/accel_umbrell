@@ -42,8 +42,8 @@ export function beforeRender(delta) {
 export function render(index) { 
   sparkHue = accelerometer[0] // hsv taken from accel axis
 
-    if(analogInputs[0] < 0.3){
-  v = pixels[index]
-  hsv(sparkHue+random(0.1), sparkSaturation, v * v * 10)
+    if(analogInputs[0] < 0.3){ // if the piezo is hit
+     v = pixels[index] // pick a point
+     hsv(sparkHue+random(0.1), sparkSaturation, v * v * 10) // display the color
     } 
 }
